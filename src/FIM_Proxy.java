@@ -1,7 +1,6 @@
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.util.Scanner; // Import the Scanner class to read text files
 
 public class FIM_Proxy implements FIM_Interface {
