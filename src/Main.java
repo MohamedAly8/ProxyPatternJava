@@ -1,21 +1,19 @@
+import java.io.FileNotFoundException;
+
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         
         // Client 1
-        String classpath = System.getProperty("java.class.path");
-        System.out.println(classpath);
+         Client client1 = new Client("0001", "password123");
 
-
-         Client client1 = new Client("0001", "password");
 
          FIM_Proxy proxy1 = new FIM_Proxy(client1);
 
-         // this SHOULD verify and then internally tell FIM to change the password AND PROVIDE STATUS MESSAGE
-         proxy1.change_password();
-        
 
-    
+         // Here, proxy verify newPassword and then if verified,
+        // internally tell FIM to change the password if AND PROVIDE STATUS MESSAGE to client
+         proxy1.change_password();
     }
     
 }

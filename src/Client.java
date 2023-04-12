@@ -18,8 +18,8 @@ public class Client {
     }
 
     // notify function 
-    public String notify_client(String message) {
-        return message;
+    public void notify_client(String message) {
+        System.out.println(message);
     }
 
 }
