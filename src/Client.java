@@ -1,4 +1,3 @@
-import javax.swing.SpinnerDateModel;
 
 public class Client {
     // a client had an id and a password 
