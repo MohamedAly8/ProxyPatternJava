@@ -8,7 +8,7 @@ public class Main {
         
 
         
-        System.out.println("Welcome to the FIM System");
+        System.out.println("\033[0;1m" + "Welcome to the FIM System");
 
         Scanner sc = new Scanner(System.in);
 
