@@ -16,9 +16,8 @@ public class FIM implements FIM_Interface {
          this.client_newPassword = client_newPassword;
     }
     public void change_password() {
-        // change password
-        System.out.println("hello, you have reached FIM");
-
+        
+        
         File remote_db = new File("Passwords.txt");
         File temp_db = new File("TempPasswords.txt");
 

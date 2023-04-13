@@ -1,3 +1,5 @@
+import javax.swing.SpinnerDateModel;
+
 public class Client {
     // a client had an id and a password 
     private String id;
@@ -19,6 +21,7 @@ public class Client {
 
     // notify function 
     public void notify_client(String message) {
+        System.out.println("Client Notified:");
         System.out.println(message);
     }
 
