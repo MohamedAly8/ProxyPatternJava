@@ -45,6 +45,7 @@ Overall, the Proxy Pattern is a valuable design pattern that allows an intermedi
 ## Option 2: Run though Intellij 
 _Backup Option if JAR File fails_
 - Run File `Main.java` in the IDE
+- The Program will read the files Local_Record.txt / Password.txt from Project Root Directory
 - __Note__: App is built using Java 11 
 
 <br />
