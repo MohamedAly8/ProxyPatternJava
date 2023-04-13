@@ -10,11 +10,11 @@ public class Main {
         
         System.out.println("Welcome to the FIM System");
 
+        Scanner sc = new Scanner(System.in);
 
         while(true){
         
             // open scanner 
-        Scanner sc = new Scanner(System.in);
 
         System.out.println("IDs in System: 0001, 0002, 0003, 0004, 0005, 0006");
         System.out.println("Please enter your ID: ");
@@ -39,6 +39,7 @@ public class Main {
 
         
     }
+    
 }   
     
 }
