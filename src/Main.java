@@ -1,20 +1,44 @@
 import java.io.FileNotFoundException;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
         
-        // Client 1 has attributes id and newPassword when making a request to FIM
-         Client client1 = new Client("0001", "newpassword123");
 
-        // FIM_Proxy is the proxy that will verify the password
-        FIM_Proxy proxy1 = new FIM_Proxy(client1);
+        
+        System.out.println("Welcome to the FIM System");
 
-        // Here, proxy verify newPassword and then if verified,
-        // if password is valid, FIM will change the password and 
-        // Client will be updated of password change status (Error with Date1&Date2 or Success)
-        // the Passwords.txt will update if Sucess
-         proxy1.change_password();
+
+        while(true){
+        
+            // open scanner 
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("IDs in System: 0001, 0002, 0003, 0004, 0005, 0006");
+        System.out.println("Please enter your ID: ");
+        String id = sc.nextLine();
+        System.out.println("Please enter your desired new password: ");
+        String newPassword = sc.nextLine();
+        
+
+        Client client2 = new Client(id, newPassword);
+        FIM_Proxy proxy2 = new FIM_Proxy(client2);
+        proxy2.change_password();
+
+        System.out.println("Enter (1) to Continue or any other character to Exit!");
+
+        if (!sc.nextLine().equals("1")) {
+            System.out.println("Good bye!");
+            sc.close();
+            break;
+        }
+
+            System.out.println("\n \n \n \n");
+
+        
     }
+}   
     
 }

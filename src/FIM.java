@@ -7,28 +7,27 @@ import java.util.Scanner;
 
 public class FIM implements FIM_Interface {
   
-    private Client client;
+
     private String client_id;
     private String client_newPassword;
 
-    public FIM (Client client) {
-        this.client = client;
-        this.client_id = this.client.getId();
-        this.client_newPassword = client.get_newPassword();
-        // constructor 
+    public FIM (String client_id, String client_newPassword) {
+         this.client_id = client_id;
+         this.client_newPassword = client_newPassword;
     }
-
     public void change_password() {
         // change password
         System.out.println("hello, you have reached FIM");
 
-        File remote_db = new File("./resources/Passwords.txt");
-        File temp_db = new File("./resources/TempPasswords.txt");
+        File remote_db = new File("Passwords.txt");
+        File temp_db = new File("TempPasswords.txt");
 
         try {
 
-        BufferedWriter writer = new BufferedWriter(new FileWriter(temp_db, true));
+        BufferedWriter writer = new BufferedWriter(new FileWriter(temp_db, false));
         writer.write("id, password");
+        writer.newLine();
+
         
         // scan file with scanner 
         Scanner sc = new Scanner(remote_db);
@@ -42,11 +41,14 @@ public class FIM implements FIM_Interface {
             // Found Client
             if (row_data[0].equals(this.client_id)){
                 // Update their data row
-                writer.write(row_data[0] + this.client_newPassword);
+                String addrow = row_data[0] + "," + this.client_newPassword;
+                writer.write(addrow);
+                writer.newLine();
             }
             else {
                 // Unchanged data row
                 writer.write(row);
+                writer.newLine();
             }
 
         }
@@ -62,8 +64,14 @@ public class FIM implements FIM_Interface {
         e.printStackTrace();
         }
 
+
+        // delte Passwords.txt
         remote_db.delete();
+        // rename TempPasswords.txt to Passwords.txt 
         temp_db.renameTo(remote_db);
+        
+
     }
+
 
 }
